@@ -12801,8 +12801,7 @@ static struct bpf_test tests[] = {
 		.prog_type = BPF_PROG_TYPE_SOCKET_FILTER,
 		.errstr_unpriv = "function calls to other bpf functions are allowed for root only",
 		.result_unpriv = REJECT,
-		.errstr = "!read_ok",
-		.result = REJECT,
+		.result = ACCEPT,
 	},
 };
 
