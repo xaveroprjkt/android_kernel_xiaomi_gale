@@ -1290,6 +1290,9 @@ struct bpf_sysctl_kern {
 	size_t new_len;
 	int new_updated;
 	int write;
+	loff_t *ppos;
+	/* Temporary "register" for indirect stores to ppos. */
+	u64 tmp_reg;
 };
 
 struct bpf_sockopt_kern {
