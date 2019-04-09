@@ -2211,7 +2211,6 @@ static struct bpf_insn *bpf_insn_prepare_dump(const struct bpf_prog *prog,
 
 		imm = ((u64)insns[i + 1].imm << 32) | (u32)insns[i].imm;
 		map = bpf_map_from_imm(prog, imm, &off, &type);
-
 		if (map) {
 			insns[i].src_reg = type;
 			insns[i].imm = map->id;

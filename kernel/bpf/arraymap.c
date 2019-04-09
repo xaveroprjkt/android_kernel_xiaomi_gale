@@ -167,14 +167,13 @@ static int array_map_direct_value_addr(const struct bpf_map *map, u64 *imm,
 
 	if (map->max_entries != 1)
 		return -ENOTSUPP;
-
 	if (off >= map->value_size)
 		return -EINVAL;
 
 	*imm = (unsigned long)array->value;
-
 	return 0;
 }
+
 static int array_map_direct_value_meta(const struct bpf_map *map, u64 imm,
 				       u32 *off)
 {
@@ -184,12 +183,10 @@ static int array_map_direct_value_meta(const struct bpf_map *map, u64 imm,
 
 	if (map->max_entries != 1)
 		return -ENOTSUPP;
-
 	if (imm < base || imm >= base + range)
 		return -ENOENT;
 
 	*off = imm - base;
-
 	return 0;
 }
 

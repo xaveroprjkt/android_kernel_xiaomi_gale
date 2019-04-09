@@ -266,7 +266,6 @@ enum bpf_attach_type {
  */
 #define BPF_F_ANY_ALIGNMENT	(1U << 1)
 
-/* when bpf_ldimm64->src_reg == BPF_PSEUDO_MAP_FD, bpf_ldimm64->imm == fd */
 /* When BPF ldimm64's insn[0].src_reg != 0 then this can have
  * two extensions:
  *
