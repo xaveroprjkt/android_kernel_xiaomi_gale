@@ -2060,7 +2060,6 @@ static int check_tp_buffer_access(struct bpf_verifier_env *env,
 			regno, off, tn_buf);
 		return -EACCES;
 	}
-
 	if (off + size > env->prog->aux->max_tp_access)
 		env->prog->aux->max_tp_access = off + size;
 

@@ -380,8 +380,8 @@ struct bpf_prog_aux {
 	atomic_t refcnt;
 	u32 used_map_cnt;
 	u32 max_ctx_offset;
-	u32 max_tp_access;
 	u32 max_pkt_offset;
+	u32 max_tp_access;
 	u32 stack_depth;
 	u32 id;
 	bool offload_requested;
