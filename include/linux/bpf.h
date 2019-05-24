@@ -387,6 +387,7 @@ struct bpf_prog_aux {
 	bool offload_requested;
 	u32 func_cnt; /* used by non-func prog as the number of func progs */
 	u32 func_idx; /* 0 for non-func prog, the index in func array for func prog */
+	bool verifier_zext; /* Zero extensions has been inserted by verifier. */
 	struct bpf_prog **func;
 	void *jit_data; /* JIT specific data. arch dependent */
 	struct latch_tree_node ksym_tnode;
