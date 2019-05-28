@@ -484,6 +484,9 @@ int __cgroup_bpf_query(struct cgroup *cgrp, const union bpf_attr *attr,
 	struct bpf_prog_array *effective;
 	int cnt, ret = 0, i;
 
+	effective = rcu_dereference_protected(cgrp->bpf.effective[type],
+					      lockdep_is_held(&cgroup_mutex));
+
 	if (attr->query.query_flags & BPF_F_QUERY_EFFECTIVE)
 		cnt = bpf_prog_array_length(effective);
 	else
