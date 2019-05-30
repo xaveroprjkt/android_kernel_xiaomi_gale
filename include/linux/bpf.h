@@ -104,8 +104,7 @@ struct bpf_map {
 	/* The 3rd and 4th cacheline with misc members to avoid false sharing
 	 * particularly with refcounting.
 	 */
-	struct user_struct *user ____cacheline_aligned;
-	atomic_t refcnt;
+	atomic_t refcnt ____cacheline_aligned;
 	atomic_t usercnt;
 	struct work_struct work;
 	char name[BPF_OBJ_NAME_LEN];
